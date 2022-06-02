@@ -1,0 +1,356 @@
+@charset "utf-8";
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-family: "맑은 고딕";
+    color: #333333;
+}
+
+body{
+    
+    width: 1000px;
+    background-color: #ffffff;
+    font-size: 20px;
+    /* border: 1px solid red; */
+}
+
+a{
+    text-decoration: none;
+    display:block;
+}
+
+header{
+    height: 100px; /*상단 높이*/
+    width: 1000px; /*상단 너비*/
+}
+
+.top{ /* .logo와 .menu를 묶어줌*/
+    height: 100px;
+    width: 1000px;
+}
+
+.logo{ /*로고 영역 스타일 적용*/
+    float:left;
+    height: 100px;
+    width: 180px;
+}
+
+.logo img{
+    float: left;
+    height: 40px;
+    width: 150px;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+.menu{
+    float: left;
+    height: 100px;
+    width: 800px;
+    z-index: 1;
+}
+
+.navi{
+    float: right;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.navi > li{
+    float: left;
+}
+.navi > li > a{
+    height: 40px;
+    width: 180px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000;
+}
+.navi > li > a:hover{
+    background-color: #ababab;
+}
+.submenu{
+    width: 180px;
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.submenu > li > a{
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    color: #000 ;
+}
+
+.submenu > li > a:hover{
+    background-color: #A9A9A9;
+}
+
+
+.bodywrap{ /* .imgslide와 .contents를 묶어줌*/
+    height: 600px; /* imgslide와 contents 의 합한 높이 300+200 */
+    width: 1000px; /*.imgslide 너비, contents 너비*/
+}
+
+.imgslide{
+    margin-top: auto all;
+   height: 420px; /* 이미지 슬라이드 높이*/
+   width: 1000px;
+   position: relative;
+   overflow: hidden;
+}
+.imgslide > a{
+    display: block;
+    position: absolute;
+}
+.imgtext{
+    height: 50px;
+    width: 500px;
+    position: absolute;
+    margin: -25px 0 0 -250px; 
+    /*박스 요소의 margin top -25px, margin-right 0px margin- bottom 0px margin left -150px 여백을 의미함*/
+    /*부모 요소에 position:relative값을 주고 자식요소에 position:absolute적용한 후
+    left:50% top50% margin top*/
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    line-height: 50px;
+    /*background-color: rgb(255, 255, 255,1.0);*/
+}
+
+.contents{
+    height: 180px;  /*콘텐츠(공지사항,갤러리,바로가기)높이*/
+    width: 1000px;  /*콘텐츠(공지사항,갤러리,바로가기)너비*/
+}
+
+.notice{
+    float: left;
+    height: 180px;
+    width: 390px;
+    margin-top: 10px;
+}
+.tab{
+    float: left;
+    width: 400px;
+}
+.tab h4{
+    float: left;
+    height: 20px;
+    width: 120px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ababab;
+}
+.notice >  div {
+    width: 390px;
+    border-bottom-color: #ababab;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+.notice li{ /*공지사항 (.notice)콘텐츠 영역 스타일 적용*/
+    float: left;
+    height: 38px;
+    width: 390px;
+    line-height: 38px;
+    font-size: 14px;
+}
+.notice li span{
+    float: right;
+}   
+.notice li:nth-child(2n){ /*공지사항(.notice) 2배수(2n) 요소 배경 스타일 적용*/
+    background-color: #ababab;
+}
+.notice li:hover{ /*공지사항 콘텐츠에 마우스를 올릴 떄 스타일 적용*/
+    font-weight: bold;
+}
+.gallery{
+    float: left;
+    height: 180px;
+    width: 390px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.gallery div{
+    width: 390px;
+    border-bottom-color:#ababab;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+.gallery li{  /*갤러리(.gallery) 콘텐츠 영역 스타일 적용*/
+    float: left;
+    margin-top: 10px;
+    margin-left: 4px;
+}
+.gallery img{  /*갤러리 콘텐츠 이미지 영역 스타일 적용*/
+    height: 188px;
+    width: 382px;
+}
+.gallery li:hover{ /*갤러리 콘텐츠에 마우스를 올릴때 스타일 적용*/
+    opacity: 0.5;
+}
+.wrapper{
+     /* display: none; */
+}
+#modal{ /* 레이어 팝업창 (#modal) 배경 스타일 적용*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    display: none;
+}
+#modal.active{
+    display: block; /* active가 활성화되면 블락으로 보여줌*/
+}
+.modal_up{  /*레이어 팝업창 스타일 적용*/
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    left: 30%;
+    top: 20%;
+    background-color: #ffffff;
+}
+.uptitle{
+    margin-top: 30px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.upbody{
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+}
+.upbody span{
+    color: red;
+}
+.btn{
+    height: 25px;
+    width: 100px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 3px;
+    background: #ababab;
+    position: absolute;     /*이부분*/
+    right: 10px;
+    bottom: 10px; 
+}
+
+.shortcut{
+    float: right;
+    height: 180px;
+    width: 200px;
+    margin-top: 10px;
+}
+.shortcut img{
+    float: right;
+    height: 180px;
+    width: 200px;
+}
+.sctext{
+    float: right;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    line-height: 30px;
+    background-color: rgba(40, 40, 40, 0.5);
+    margin-top: 80px;
+    margin-left: 50px;
+}
+.sctext:hover{
+    opacity: 0.5;
+}
+
+footer{
+    height: 50px; /*하단 높이*/
+    width: 1000px;  /*하단 너비*/
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.copy{
+    float:left;
+    height: 50px;
+    width: 393px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 59px;
+    color: #000;
+    
+}
+
+.site{ /*bt메뉴와 family메뉴묶어줌*/
+    float: right;
+    height: 50px;
+    width: 500px;
+}
+
+.btmenu{
+    float: right;
+    height: 50px;   /*하단 메뉴 높이 (site 높이의 1/2)*/
+    width: 300px;   /*하단 메뉴 높이*/
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
+.btmenu li svg{  /*갤러리(.gallery) 콘텐츠 영역 스타일 적용*/
+    height: 35px; 
+    width: 50px; 
+    float: left;
+    background-color: red;
+}   
+.btmenu img{
+    height: 30px;
+    width: 35px;
+    float : right;
+    margin-top: 5px;
+    margin-right: 120px;
+}
+.btmenu li >a{
+    float: right;
+    width: 45px;
+    display: inline;
+    color: #000;
+}
+.btmenu li a:hover{
+    font-weight: bold;
+}
+
+.familysite{
+    float: right;
+    height: 30px;   /*패밀리 사이트 높이 site의 1/2*/
+    width: 300px;   /*패밀리 사이트 너비*/
+    /* margin-right: 10px;
+    font-size: 14px;       여기에걸면 왜 안됬지?*/
+}
+
+.familysite select{
+    float: right;
+    height: 30px;
+    width: 280px;
+    margin-right: 10px;
+    font-size: 14px;
+}
